@@ -4,7 +4,6 @@ if( !class_exists( 'iModulesEvents' ) ) {
 	class iModulesEvents {
 		
 		public function __construct() {
-			echo 'in';
             add_shortcode('display-sortedrss', array( $this,'render_events') );
         }
         
@@ -15,10 +14,10 @@ if( !class_exists( 'iModulesEvents' ) ) {
 			
 			extract( shortcode_atts( array(
 				'title' => '',			// Default title for section
-					'count' => '3',		// # of events of output
+				'count' => '3',		// # of events of output
 				'url' => '',			// Feed URL to pull
 				'rss_item_search' => '<span style="font-weight: bold">Date:</span>' // Format of indicator date. Assumption is next next is of date/time format.
-			), $atts, 'display-alumnievents' ) );
+			), $atts, 'display-sortedrss' ) );
 			
 			if( !strlen( $url ) ) {
 				return '';
